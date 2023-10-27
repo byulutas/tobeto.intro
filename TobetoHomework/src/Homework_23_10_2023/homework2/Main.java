@@ -1,9 +1,4 @@
-package homework2;
-
-import homework2.CorporateCustomer;
-import homework2.Customer;
-import homework2.IndividualCustomer;
-import homework2.Product;
+package Homework_23_10_2023.homework2;
 
 public class Main {
     public static void main(String[] args) {
