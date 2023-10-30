@@ -1,11 +1,8 @@
 package Workshop_27_10_2023_Car_Models.business;
 
-
-
 import Workshop_27_10_2023_Car_Models.core.logging.Logger;
 import Workshop_27_10_2023_Car_Models.dataAccess.CarDao;
 import Workshop_27_10_2023_Car_Models.entities.Car;
-
 
 public class CarManager {
     //iş kuralları
@@ -24,6 +21,7 @@ public class CarManager {
         }else {
             carDao.add(car);
         }
+
         for(Logger logger: loggers){
             logger.log(car.getName());
         }
@@ -31,8 +29,10 @@ public class CarManager {
     public void delete(Car car) throws Exception{
         if(car.getModelYear() > 2022 && car.getTotalKm()<50000){
             throw new Exception("Bu özelliklerdeki araçlar silinemez.");
+        }else {
+            carDao.delete(car);
         }
-        carDao.delete(car);
+
         for(Logger logger: loggers){
             logger.log(car.getName());
         }
